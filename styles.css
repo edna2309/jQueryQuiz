@@ -1,0 +1,244 @@
+:root{
+    --primary:  #0769AD;
+    --secondary: #68686894;
+    --right: #65be57;
+    --wrong: #d63c3c;
+}
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 20px;
+    font-family: 'Inria Sans';
+}
+h1{
+    margin: 30px 0;
+    justify-content: center;
+    font-size: 40px;
+    font-weight: bold;
+    font-family: 'Racing Sans One', cursive;
+}
+/*logo jQuery-ja*/
+img{
+    width: 90px;
+    margin-top: 30px;
+}
+html{ 
+    background: url('https://shutterconcepts.com.au/wp-content/uploads/2015/04/light-grey-abstract-background-hd-cool-7.jpg') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+/*uvodni tekst na pocetku*/
+#uvod{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    margin: 15px 0;
+    padding: 2px;
+    width: 50%;
+    text-align: center;
+    color: var(--primary);
+    text-transform: uppercase;
+}
+/*restart, start, next*/
+.btn {
+    margin: 0px 0;
+}
+.btn a{
+    color: rgb(255, 255, 255);
+    padding: 8px 24px;
+    text-transform: uppercase;
+    border-radius: 8px;
+    outline: none;
+    background-color: var(--secondary);
+    text-align: center;
+    width: 150px;
+}
+/*kontejner koji sadrži pitanja i odgovore*/
+#pitanja{
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+/*pojedinacno pitanje*/
+#pitanje{
+    text-transform: uppercase;
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+
+a{
+    text-decoration: none;
+}
+/*kontejner sa odgovorima*/
+#odgovori{
+    display: grid;
+    grid-row-gap: 6px;
+}
+/*klasa odgovora*/
+.odg{
+    background-color: var(--secondary);
+    text-align: center;
+    border-radius: 8px;
+    padding: 6px;
+}
+.odg a{
+    width: 100%;
+    color: white;
+}
+.odg:hover{
+    background-color: rgb(190, 190, 190);
+}
+/*poeni*/
+#rezultat{
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 24px;
+}
+/*kontejner za krajnju poruku*/
+#kraj{
+    margin: 30px 0;
+    text-align: center;
+    font-size: 24px;
+}
+#start{
+    margin-top: 20px;
+}
+#next{
+    margin-top: -20px;
+}
+/*tajmer koji mjeri vrijeme*/
+#timer{
+    margin: 10px 5px 0;
+    text-transform: uppercase;
+}
+/*blok sa kockicama koje prikazuju korisnikove odgovore*/
+#tracker{
+    margin: 10px 0 30px 0!important;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 14px;
+    grid-row-gap: 14px;
+    margin-top: 15px;
+}
+/*svaka kockica posebno*/
+.kockica{
+    background-color: var(--secondary);
+    text-align: center;
+    padding: 7px;
+    border-radius: 4px;
+}
+.kockica a{
+    color: white;
+}
+.kockica a:hover{
+    color: rgb(209, 209, 209);
+}
+/* MEDIA QUERY*/
+
+/* Tableti */
+@media only screen and (min-width: 768px) and (max-width: 991px){
+    #uvod{
+        width: 70%;
+    }
+    #pitanja{
+        width: 50%;
+    }
+    #pitanje{
+        margin-bottom: 30px;
+    }
+    h1{
+        margin-bottom: 40px;
+    }
+    #odgovori{
+        grid-row-gap: 8px;
+    }
+}
+
+/* Mali uredjaji*/
+@media only screen and (min-width: 601px) and (max-width: 768px){
+    *{
+        font-size: 19px;
+    }
+    #uvod{
+        width: 80%;
+    }
+    h1{
+        margin-bottom: 30px;
+    }
+    #pitanja{
+        width: 72%;
+    }
+    #odgovori{
+        grid-row-gap: 8px;
+    }
+    .odg{
+        padding: 8px;
+    }
+    #tracker{
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+    }
+    .kockica{
+        padding: 8px;
+    }
+}
+
+
+
+/*veoma mali uredjaji*/
+@media only screen and (max-width: 600px){
+    *{
+        font-size: 17px;
+    }
+    h1{
+        margin-bottom: 40px;
+        font-size: 34px;
+    }
+    #pitanja{
+        width: 90%;
+        margin: 2px;
+    }
+    #pitanje{
+        font-size: 19px;
+        margin-bottom: 30px;
+        text-transform: none;
+    }
+    #odgovori{
+        grid-row-gap: 9px;
+    }
+    
+    #rezultat{
+        font-size: 21px;
+    }
+   #uvod{
+       width: 90%;
+   }
+   #tracker{
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    margin-top: 0;
+    }
+    .kockica{
+        padding: 8px;
+    }
+    #kraj {
+        font-size: 19px;
+    }
+    #restart{
+        margin-bottom: 10px !important;
+    }
+}
